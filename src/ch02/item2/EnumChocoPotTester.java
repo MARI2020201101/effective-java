@@ -10,6 +10,8 @@ public class EnumChocoPotTester {
         ChocolatePotV4 chocolatePotV4 = serializeChocoPot();
         ChocolatePotV4 deserializeChocoPot = deserializeChocoPot();
 
+        System.out.println(chocolatePotV4.hashCode());
+        System.out.println(deserializeChocoPot.hashCode());
         System.out.println("---------------------------------------");
         System.out.println("ChocolatePotV4==deserializeChocoPot : " + (chocolatePotV4==deserializeChocoPot));
         System.out.println("ChocolatePotV4.equals(deserializeChocoPot) : " +(chocolatePotV4.equals(deserializeChocoPot)));
