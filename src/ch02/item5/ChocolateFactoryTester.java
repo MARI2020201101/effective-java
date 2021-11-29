@@ -8,5 +8,13 @@ public class ChocolateFactoryTester {
         heartChoco.printName();
         System.out.println("-------------------------------");
         crunchChoco.printName();
+
+        Chocolate almondChoco = chocolateFactory.givemeCrunchChoco(CrunchChocolate.ChocoDeco.ALMOND);
+        Chocolate bananaChoco = chocolateFactory.givemeCrunchChoco(CrunchChocolate.ChocoDeco.BANANA);
+        System.out.println("-------------------------------");
+        almondChoco.printName();
+        System.out.println("-------------------------------");
+        bananaChoco.printName();
+
     }
 }
