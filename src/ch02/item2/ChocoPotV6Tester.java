@@ -2,11 +2,17 @@ package ch02.item2;
 
 import java.io.*;
 
-public class EnumChocoPotTester {
+public class ChocoPotV6Tester {
 
-    public static final String FILE_NAME = "chocopot.serialize.enum";
-    public static void main(String[] args) {
-        ChocolatePotV4.CHOCOLATE_POT_V4.printName();
+    public static final String FILE_NAME = "chocopot.serialize.v6";
+    public static void main(String[] args) throws Exception {
+        ChocolatePotV6 chocolatePotV6 = serializeChocoPot();
+        ChocolatePotV6 deserializeChocoPot = deserializeChocoPot();
+
+        System.out.println("---------------------------------------");
+        System.out.println("chocolatePotV6==deserializeChocoPot : " + (chocolatePotV6==deserializeChocoPot));
+        System.out.println("chocolatePotV6.equals(deserializeChocoPot) : " +(chocolatePotV6.equals(deserializeChocoPot)));
+
     }
 
     public static ChocolatePotV6 serializeChocoPot() throws IOException {
@@ -34,4 +40,5 @@ public class EnumChocoPotTester {
 
         return chocolatePotV6;
     }
+
 }
