@@ -4,11 +4,12 @@ import java.lang.ref.Cleaner;
 
 public class Room implements AutoCloseable{
     private final State state;
-    private final Cleaner.Cleanable cleanable;
+    private final Cleaner cleaner = Cleaner.create();
+    private Cleaner.Cleanable cleanable;
 
-    public Room(State state, Cleaner.Cleanable cleanable){
+    public Room(State state){
         this.state = state;
-        this.cleanable = cleanable;
+        this.cleanable = cleaner.register(this, state);
     }
 
     public static class State implements Runnable{
@@ -20,12 +21,12 @@ public class Room implements AutoCloseable{
         @Override
         public void run() {
             System.out.println("방청소를 하자!");
-            for (int i = 0; i < trashCount; i++) {
+            for (int i = trashCount; i >= 0 ; i--) {
                 System.out.println("쓰레기 처치 : " + trashCount--);
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
         }
@@ -33,6 +34,6 @@ public class Room implements AutoCloseable{
 
     @Override
     public void close() throws Exception {
-
+        cleanable.clean();
     }
 }
