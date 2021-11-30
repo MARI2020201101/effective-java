@@ -33,6 +33,6 @@ public class Room implements AutoCloseable{
 
     @Override
     public void close() throws Exception {
-        
+
     }
 }
