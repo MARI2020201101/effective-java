@@ -9,6 +9,10 @@ public class CaseIntensiveString {
         this.s = Objects.requireNonNull(s);
     }
 
+    public String getS() {
+        return s;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof CaseIntensiveString){
