@@ -2,19 +2,20 @@ package ch05.item29;
 
 import java.util.Arrays;
 
-public class StackV2<E> {
-    private E[] elements;
+@SuppressWarnings("unchecked")
+public class StackV4<E> {
+    private Object[] elements;
     private int size;
     private int max;
     private static final int DEFAULT_SIZE = 16;
 
 
-    public StackV2(){
-        elements = (E[])new Object[DEFAULT_SIZE]; //E타입으로 캐스팅..
+    public StackV4(){
+        elements = new Object[DEFAULT_SIZE];
     }
-    public StackV2(int capacity){
+    public StackV4(int capacity){
         max=capacity;
-        elements=(E[])new Object[max];
+        elements=new Object[max];
         size=0;
     }
     public void push(E o){
@@ -25,7 +26,7 @@ public class StackV2<E> {
     public E pop(){
         if(isEmpty()) return null;
 
-        E o = elements[--size];
+        E o = (E) elements[--size];
         elements[size]=null;
         return o;
     }

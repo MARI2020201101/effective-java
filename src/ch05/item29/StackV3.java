@@ -2,17 +2,18 @@ package ch05.item29;
 
 import java.util.Arrays;
 
-public class StackV2<E> {
+@SuppressWarnings("unchecked") //타입에러 경고를 막는다. 안전함을 확신할 수 있기때문이다
+public class StackV3<E> {
     private E[] elements;
     private int size;
     private int max;
     private static final int DEFAULT_SIZE = 16;
 
 
-    public StackV2(){
-        elements = (E[])new Object[DEFAULT_SIZE]; //E타입으로 캐스팅..
+    public StackV3(){
+        elements = (E[])new Object[DEFAULT_SIZE];
     }
-    public StackV2(int capacity){
+    public StackV3(int capacity){
         max=capacity;
         elements=(E[])new Object[max];
         size=0;
