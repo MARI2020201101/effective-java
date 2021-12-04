@@ -2,30 +2,30 @@ package ch05.item29;
 
 import java.util.Arrays;
 
-public class Stack {
-    private Object[] elements;
+public class StackV2<E> {
+    private E[] elements;
     private int size;
     private int max;
     private static final int DEFAULT_SIZE = 16;
 
 
-    public Stack(){
-        elements = new Object[DEFAULT_SIZE];
+    public StackV2(){
+        elements = (E[])new Object[DEFAULT_SIZE]; //Ex타입으로 캐스팅..
     }
-    public Stack(int capacity){
+    public StackV2(int capacity){
         max=capacity;
-        elements=new Object[max];
+        elements=(E[])new Object[max];
         size=0;
     }
-    public void push(Object o){
+    public void push(E o){
         if(size>=max) ensureCapacity();
         elements[size++] = o;
     }
 
-    public Object pop(){
+    public E pop(){
         if(isEmpty()) return null;
 
-        Object o = elements[--size];
+        E o = elements[--size];
         elements[size]=null;
         return o;
     }
