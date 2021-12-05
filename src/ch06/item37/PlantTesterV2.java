@@ -1,9 +1,9 @@
 package ch06.item37;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
-public class PlantTester {
+public class PlantTesterV2 {
     public static void main(String[] args) {
 
         Plant[] garden = {new Plant("rose", Plant.LifeCycle.ANNUAL)
@@ -13,16 +13,17 @@ public class PlantTester {
                 ,new Plant("chesongwa", Plant.LifeCycle.BIENNIAL)
                 ,new Plant("fff", Plant.LifeCycle.BIENNIAL)};
 
-        Set<Plant>[] sets = new Set[Plant.LifeCycle.values().length];
-        for (int i = 0; i < Plant.LifeCycle.values().length; i++) {
-            sets[i] = new HashSet<>();
+        //Enum map을 이용하여 enum을 키로 하는 set을 넣는다...
+        EnumMap<Plant.LifeCycle, Set<Plant>> enumMap = new EnumMap<>(Plant.LifeCycle.class);
+        for(Plant.LifeCycle pl : Plant.LifeCycle.values()){
+            enumMap.put(pl,new HashSet<>());
         }
         for(Plant p : garden){
-            sets[p.getLifeCycle().ordinal()].add(p); //ordinal을 인덱스로 이용하고 있다.
+            Set<Plant> plants = enumMap.get(p.getLifeCycle());
+            plants.add(p);
         }
 
-        for (int i = 0; i < sets.length; i++) {
-            System.out.printf("%s: %s\n", Plant.LifeCycle.values()[i], sets[i]);
-        }
+        System.out.println(enumMap);
+
     }
 }
