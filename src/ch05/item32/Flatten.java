@@ -2,7 +2,7 @@ package ch05.item32;
 
 import java.util.*;
 
-public class FailedTypeCasting {
+public class Flatten {
     public static void main(String[] args) {
         List<Integer> flatten = flatten(List.of(1, 2, 3), List.of(4, 5, 6));
         System.out.println(flatten);
