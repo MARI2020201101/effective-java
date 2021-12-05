@@ -28,7 +28,8 @@ public class FavoritesTester {
         FavoritesV2 favoritesV2 = new FavoritesV2();
         favoritesV2.putFavorites(List.class, List.of(1,2,3));
 //        favoritesV2.putFavorites(List<String>.class , List.of("a","b","c"));
-        //클래스 리터럴을 사용할수가 없다... 자바의 하위호환성을 위한 몸부림때문에 ㅜㅜ        List favorites8 = favoritesV2.getFavorites(List.class);
+        //클래스 리터럴을 사용할수가 없다... 자바의 하위호환성을 위한 몸부림때문에 ㅜㅜ
+        List favorites8 = favoritesV2.getFavorites(List.class);
         System.out.println(favorites8);
     }
 }
