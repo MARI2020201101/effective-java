@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface ExpectExceptionV2 {
-    Class<? extends Throwable>[] value();
+public @interface ExpectExceptionContainer {
+    ExpectExceptionV3[] value();
 }

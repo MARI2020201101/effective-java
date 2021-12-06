@@ -23,4 +23,21 @@ public class Tester {
         System.out.println("method5");
     }
 
+    @ExpectExceptionV2(value={RuntimeException.class, ArithmeticException.class ,IllegalArgumentException.class})
+    public static void method6(){
+        System.out.println("method6");
+        throw new ArithmeticException("ArithmeticException method6");
+    }
+    @ExpectExceptionV2(value={RuntimeException.class, ArithmeticException.class ,IllegalArgumentException.class})
+    public static void method7(){
+        System.out.println("method7");
+    }
+
+    @ExpectExceptionV3(RuntimeException.class)
+    @ExpectExceptionV3(IllegalArgumentException.class)
+    public static void method8(){
+        throw new IllegalArgumentException("IllegalArgumentException method8");
+    }
+
+
 }
