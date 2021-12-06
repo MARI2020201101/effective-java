@@ -8,7 +8,7 @@ public class Tester {
     }
     @ExpectException(RuntimeException.class)
     public static void method2(){
-        System.out.println("RuntimeException  method2");
+        throw new RuntimeException("RuntimeException  method2");
     }
     @Test
     public static void method3(){
@@ -16,7 +16,7 @@ public class Tester {
     }
     @ExpectException(ArithmeticException.class)
     public static void method4(){
-        System.out.println("ArithmeticException  method4");
+        throw new ArithmeticException("ArithmeticException  method4");
     }
     @Test
     public static void method5(){
