@@ -1,4 +1,4 @@
-package ch07.item46;
+package ch07.item45;
 
 import java.math.BigInteger;
 import java.util.stream.Stream;
