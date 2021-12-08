@@ -29,7 +29,7 @@ public class AlbumToMap {
                         toMap( Album::getArtist, //key
                                 album -> album,  //value
                                 BinaryOperator.maxBy(comparingInt(Album::getSales)))
-                                // key 중복되는 경우 value맵핑기준
+                                // key가 충돌하는 경우 value맵핑기준
         );
         System.out.println(albumMap);
 
