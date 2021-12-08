@@ -1,0 +1,5 @@
+package ch07.item46;
+
+public enum Rank {
+    ONE,TWO,THREE,FOUR,FIVE,SIX,EIGHT,NINE,TEN,ELEVEN,TWELEVE,THIRTEEN
+}
