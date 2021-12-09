@@ -1,4 +1,4 @@
-package ch09;
+package ch09.item58;
 
 import ch07.item45.Card;
 import ch07.item45.Rank;

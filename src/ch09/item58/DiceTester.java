@@ -1,4 +1,4 @@
-package ch09;
+package ch09.item58;
 
 import java.util.EnumSet;
 import java.util.Iterator;
@@ -19,6 +19,13 @@ public class DiceTester {
             for (int j = 0; j < dice.size(); j++) {
                 Iterator<Dice> it2 = dice.iterator();
                 System.out.println(it.next() + " " + it2.next()); //올바른 해답!
+            }
+        }
+
+        System.out.println("-------------");
+        for (Dice dice1 : Dice.values()){
+            for(Dice dice2 : Dice.values()){
+                System.out.println(dice1 + " " + dice2); // 훨씬 깔끔한 해답!
             }
         }
     }
