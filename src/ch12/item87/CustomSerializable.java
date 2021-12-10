@@ -43,4 +43,11 @@ public class CustomSerializable implements Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        return "CustomSerializable{" +
+                "number=" + number +
+                ", versions=" + versions +
+                '}';
+    }
 }

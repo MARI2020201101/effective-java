@@ -1,16 +1,13 @@
 package ch12.item87;
 
 import java.io.*;
-import java.util.List;
-
-import static ch12.item87.CustomSerializable.Versions;
 
 public class CustomSerializableTesterV2 {
     public static String FILE_NAME = "custom.02";
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         serialize();
-        CustomSerializable deserializedObject = deserialize();
+        CustomSerializableV2 deserializedObject = deserialize();
         System.out.println(deserializedObject);
 
     }
@@ -21,17 +18,17 @@ public class CustomSerializableTesterV2 {
             BufferedOutputStream bos = new BufferedOutputStream(fos);
             ObjectOutputStream out = new ObjectOutputStream(bos)){
 
-            out.writeObject(new CustomSerializable(1, List.of(Versions.values())));
+            out.writeObject(new CustomSerializableV2(1, null));
         }
     }
-    public static CustomSerializable deserialize() throws IOException, ClassNotFoundException {
+    public static CustomSerializableV2 deserialize() throws IOException, ClassNotFoundException {
 
         try (FileInputStream fis = new FileInputStream(FILE_NAME);
              BufferedInputStream bis = new BufferedInputStream(fis);
              ObjectInputStream in = new ObjectInputStream(bis)) {
 
-            CustomSerializable customSerializable = (CustomSerializable) in.readObject();
-            return customSerializable;
+            CustomSerializableV2 CustomSerializableV2 = (CustomSerializableV2) in.readObject();
+            return CustomSerializableV2;
         }
     }
 }
