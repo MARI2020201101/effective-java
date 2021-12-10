@@ -1,4 +1,4 @@
-package ch11;
+package ch11.item78;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -13,7 +13,7 @@ public class UniqueNumberGeneratorTester {
         CountDownLatch countDown = new CountDownLatch(THREAD_NUMBER);
 
         Runnable task = () -> {
-            countDown.countDown(); //카운트를 -1 씩 하면서, 0이 되면 기다리던 스레드들이 release된다. 
+            countDown.countDown(); //카운트를 -1 씩 하면서, 0이 되면 기다리던 스레드들이 release된다.
             UniqueNumberGenerator u = new UniqueNumberGenerator();
             System.out.println("get unique number!! > "+u.generateUniqueNum());
         };

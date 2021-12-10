@@ -1,4 +1,4 @@
-package ch11;
+package ch11.item78;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
