@@ -9,6 +9,7 @@ public class Main {
         builder.append("hehehe\n");
         builder.append("hihihi\n");
         builder.append("hohoho\n");
+        builder.append("hohoho\n");
         String s = builder.toString();
         System.out.println(s);
 
